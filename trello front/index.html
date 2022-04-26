@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TP js trello Mine</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <ul id="menu">
+                <li id="addColumn">Add Column</li>
+                <li id="addItem">Add Item</li>
+            </ul>
+            <ul class="options"><span id="btnoptions"><small>options</small></span>
+                <li><span class="archivebtn" title="archive" style="cursor: pointer;"><i class="fa-solid fa-box-archive fa-2xl"></i></span><small>Trash</small></li>
+                <li><span class="savebtn" title="sauvegarder l'etat" style="cursor: pointer;"><i class="fa-solid fa-cloud-arrow-down fa-2xl"></i></span><small>Save state</small></li>
+                <li><span class="btnrestoreetat" title="restore state" style="cursor: pointer;"><i class="fa-solid fa-cloud-arrow-up fa-2xl"></i></span><small>Restore state</small></li>
+                <li><span class="resetpos" title="Add all tasks at the first Column" style="cursor: pointer;"><i class="fa-solid fa-rotate fa-2xl"></i></span><small>Reset</small></li>
+            </ul>
+            <span id="quitMenu" style="cursor: pointer;"><i class="fa-solid fa-circle-xmark fa-xl"></i></span>
+        </div>
+        <div class="body"></div>
+        <div class="footer">
+            <div></div>
+            <span id="btnMenu"><i class="fa-solid fa-gear fa-3x"></i></span>
+            <div></div>
+        </div>
+    </div>
+    <!-- options -->
+    <ul class="btnsoptions">
+        <li><span class="archivebtn" title="archive" style="cursor: pointer;"><i class="fa-solid fa-box-archive fa-2xl"></i></span></li>
+        <li><span class="savebtn" title="save state" style="cursor: pointer;"><i class="fa-solid fa-cloud-arrow-down fa-2xl"></i></span></li>
+        <li><span class="btnrestoreetat" title="restore state" style="cursor: pointer;"><i class="fa-solid fa-cloud-arrow-up fa-2xl"></i></i></span></li>
+        <li><span class="resetpos" title="Add all tasks at the first Column" style="cursor: pointer;"><i class="fa-solid fa-rotate fa-2xl"></i></span></li>
+        <li><input type="checkbox" title="autosave" name="autosave" class="autosave"></li>
+        <span id="optionsslidebtn"><i class="fa-solid fa-chevron-right fa-2xl"></i></span>
+    </ul>
+    <!-- modal -->
+    <div class="modal">
+        <form name="form-control">
+            <div class="formheader"><span>NOUVELLE TACHE</span><span id="quitmodal" style="cursor: pointer;"><i class="fa-solid fa-square-minus fa-2xl"></i></span></div>
+            <div class="formbody">
+                <div>Remplir les informations de la nouvelle tache</div>
+                <div><label for="textarea-task">Tache</label><textarea name="task-value" id="textarea-task" class="textarea-task" cols="auto" rows="auto"></textarea></div>
+                <div><label for="date-task">Date</label><input type="date" name="date-task" id="date-task"></div>
+                <div><label for="debut-task">Heure de Debut</label><input type="time" name="debut-task" id="debut-task"></div>
+                <div><label for="fin-task">Heure de Fin</label><input type="time" name="fin-task" id="fin-task"></div>
+            </div>
+
+            <div class="formfooter">
+                <input type="button" name="btnsetitem" id="btnsetitem" value="Ajouter" >
+            </div>
+        </form>
+        <div class="saves">
+            <div class="headersaves"><span>sauvegardes d'etat</span><span id="quitsaves" style="cursor: pointer;color: aliceblue;"><i class="fa-solid fa-square-minus fa-xl"></i></span></div>
+            <div class="bodysaves"></div>
+        </div>
+    </div>
+     <!-- archive -->
+    <div class="parenttrash">
+        <div class="trash">
+            <div class="headertrash">
+                <span><i class="fa-solid fa-box-archive fa-xl"></i>Archive</span>
+                <span><button  id="btnrestorearchived">restore</button></span>
+            </div>
+            <div class="bodytrash"></div>
+        </div>
+    </div>
+    <!-- notification -->
+    <div class="notif"></div>
+    <script src="script.js"></script>
+</body>
+</html>
